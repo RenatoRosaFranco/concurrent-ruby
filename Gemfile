@@ -7,5 +7,6 @@ gem 'awesome_print'
 gem 'concurrent-ruby'
 gem 'parallel'
 gem 'erb'
+gem 'rspec'
 
 # gem "rails"
