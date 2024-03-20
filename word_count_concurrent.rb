@@ -8,7 +8,7 @@ require 'yaml'
 
 # Set configuration
 config_path = File.join(File.dirname(__FILE__), 'config', 'application.yaml')
-config = YAML.load_file(config_path)
+config = YAML.load(ERB.new(File.read(config_path)).result)
 
 require_relative 'lib/file_generator_service'
 require_relative 'lib/world_counter_service'
