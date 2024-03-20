@@ -4,18 +4,10 @@ require 'thread'
 require 'benchmark'
 
 require_relative 'lib/file_generator_service'
+require_relative 'lib/world_counter_service'
 
 # Generate files if files directory is empty
 FileGeneratorService.call if Dir.glob('files/*.txt').empty?
-
-# Function that count the numbers of world per file
-def word_count(file_path)
-  count = 0
-  File.open(file_path).each_line do |line|
-    count += line.split.count
-  end
-  count
-end
 
 file_paths = Dir.glob('files/*.txt')
 
@@ -30,7 +22,7 @@ threads = []
 realtime = Benchmark.realtime do
   file_paths.sort.each do |path|
     threads << Thread.new(path) do |file_path|
-      word_count_result = word_count(file_path)
+      word_count_result = WorldCounterService.call(file_path)
       mutex.synchronize do
         results[file_path] = word_count_result
       end
