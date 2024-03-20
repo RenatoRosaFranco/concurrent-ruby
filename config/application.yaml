@@ -1,2 +1,6 @@
 files_directory: 'files/*.txt'
 batch_size: 10
+thread_pool:
+  min_threads: 2
+  max_threads: 4
+  max_queue: 1000
