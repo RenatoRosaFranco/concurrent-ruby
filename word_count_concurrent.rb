@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'erb'
-require 'thread'
 require 'concurrent'
 require 'benchmark'
 require 'yaml'
@@ -14,7 +13,7 @@ require_relative 'lib/file_generator_service'
 require_relative 'lib/world_counter_service'
 
 # Generate files if files directory is empty
-FileGeneratorService.call if Dir.glob('files/*.txt').empty?
+FileGeneratorService.call if Dir.glob(config['files_directory']).empty?
 
 file_paths = Dir.glob(config['files_directory'])
 file_batches = file_paths.each_slice(config['batch_size']).to_a

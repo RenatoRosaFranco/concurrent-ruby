@@ -7,6 +7,7 @@ GEM
     erb (4.0.4)
       cgi (>= 0.3.3)
     ffaker (2.23.0)
+    parallel (1.24.0)
 
 PLATFORMS
   ruby
@@ -17,6 +18,7 @@ DEPENDENCIES
   concurrent-ruby
   erb
   ffaker
+  parallel
 
 BUNDLED WITH
    2.5.6
