@@ -1,0 +1,2 @@
+files_directory: 'files/*.txt'
+batch_size: 10
