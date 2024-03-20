@@ -1,10 +1,15 @@
 # frozen_string_literal: true
 
-class WorldCounterService
+require_relative './../config/logger.rb'
+
+class WorldCounterService < Object
 	def self.call(file)
-		count_words_on_file(file)
-	rescue Exception => e
-		puts "Failed to count words on file #{e.message}"
+		world_count ||= count_words_on_file(file)
+		$log.info("#{self.class.to_s} excecuted with success.")
+		
+		world_count
+	rescue StandardError => e
+		$log.error("Failed to count words on file #{e.message}")
 	end
 
 	private_class_method def self.count_words_on_file(file)

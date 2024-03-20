@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
-require 'ffaker'
+require_relative '../config/logger.rb'
 
 class FileGeneratorService < Object
 	def self.call
 		generate_files
+	rescue StandardError => e
+		$log.error("Failed to generate files, error: #{e.message}")
 	end
 
 	private_class_method def self.generate_files
