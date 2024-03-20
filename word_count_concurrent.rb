@@ -29,10 +29,10 @@ mutex = Mutex.new
 thread_pool_config = config['thread_pool']
 
 pool = Concurrent::ThreadPoolExecutor.new(
-  min_threads: thread_pool_config['min_threads'],
-  max_threads: thread_pool_config['max_threads'],
+  min_threads: [thread_pool_config['min_threads'], Concurrent.processor_count].max,
+  max_threads: [thread_pool_config['max_threads'], Concurrent.processor_count * 2].max,
   max_queue: thread_pool_config['max_queue'],
-  fallback_policy: :caller_runs
+  fallback_policy: thread_pool_config['fallback_policy'].to_sym
 )
 
 realtime = Benchmark.realtime do
