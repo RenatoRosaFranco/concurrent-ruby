@@ -1,0 +1,15 @@
+current directory: /home/renatofranco/concurrent-ruby/vendor/bundle/ruby/3.0.0/gems/erb-4.0.4/ext/erb/escape
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20240320-488238-vheri0.rb extconf.rb
+creating Makefile
+
+current directory: /home/renatofranco/concurrent-ruby/vendor/bundle/ruby/3.0.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\= clean
+
+current directory: /home/renatofranco/concurrent-ruby/vendor/bundle/ruby/3.0.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\=
+compiling escape.c
+linking shared-object erb/escape.so
+
+current directory: /home/renatofranco/concurrent-ruby/vendor/bundle/ruby/3.0.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 escape.so ./.gem.20240320-488238-x14n1t/erb

@@ -2,7 +2,10 @@ GEM
   remote: https://rubygems.org/
   specs:
     awesome_print (1.9.2)
+    cgi (0.4.1)
     concurrent-ruby (1.2.3)
+    erb (4.0.4)
+      cgi (>= 0.3.3)
     ffaker (2.23.0)
 
 PLATFORMS
@@ -12,6 +15,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   concurrent-ruby
+  erb
   ffaker
 
 BUNDLED WITH
